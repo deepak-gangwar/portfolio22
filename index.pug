@@ -1,8 +1,18 @@
 doctype html
 html(lang="en")
     head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Pug
+        include ./views/partials/head
+        include ./views/partials/noscript
+        
     body 
+        // To include all SVGs as an sprite
+        //- svg 
+        
+        main.app
+            // To implement smooth-scrolling
+            .app__wrapper
+                include ./views/partials/header
+
+                include ./views/partials/hero
+                include ./views/partials/works
+                include ./views/partials/footer

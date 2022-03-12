@@ -34,11 +34,11 @@ So that we can separate our styles of individual views and components into separ
 All these styles reside in the `styles` folder.
 
 ### Images
-Keep all the images in `assets` folder
+Keep all the images in ~~`assets`~~ `shared` folder
 
 **How to access them**
 - As `'a.png'` in JavaScript
-- As `'assets/a.png'` in HTML
+- As ~~`'assets/a.png'`~~ `'a.png'`in HTML
 
 ### Fonts
 Currently I have kept fonts in the `assets/fonts`. You can also keep them in `fonts` folder in `root` directory as well. 
