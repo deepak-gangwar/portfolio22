@@ -1,0 +1,50 @@
+/*
+** For fixing wierd spacing at top and bottom of saol
+*/
+@mixin lhCrop($line-height) {
+    &::before {
+      content: '';
+      display: block;
+      height: 0;
+      width: 0;
+      margin-top: calc((1 - #{$line-height}) * 0.5em);
+    }
+    &::after {
+        content: '';
+        display: block;
+        height: 0;
+        width: 0;
+        margin-bottom: calc((1 - #{$line-height}) * 0.36em);
+    }
+}
+
+%heading-140 {
+    font-family: $saol;
+    // font-size: 75pt;
+    font-size: 5.8rem;
+    letter-spacing: calc(-32 / 1000) * 1em;
+    text-transform: uppercase;
+    @include lhCrop(1.9);
+}
+
+%heading-96 {
+    font-family: $saol;
+    // font-size: 48pt;
+    font-size: 4rem;
+    letter-spacing: calc(-55 / 1000) * 1em;
+}
+
+%text-14 {
+    font-family: $suisse;
+    // font-size: 7pt;
+    font-size: 0.58rem;
+    letter-spacing: calc(-12 / 1000) * 1em;
+}
+
+%text-24 {
+    font-family: $suisse;
+    // font-size: 12pt;
+    font-size: 0.9rem;
+    letter-spacing: calc(-48 / 1000) * 1em;
+    line-height: 14pt;
+}
