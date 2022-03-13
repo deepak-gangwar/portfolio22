@@ -1,0 +1,24 @@
+.header__wrapper {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding-left:8.3333333333vw;
+    padding-right: 8.3333333333vw;
+}
+
+.header__content {
+    position: relative;
+}
+
+.header__list {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 5vh 0;
+    list-style: none;
+}
+
+.header__item {
+    display: inline-block;    
+}
