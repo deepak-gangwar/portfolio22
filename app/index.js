@@ -1,5 +1,6 @@
 import SmoothScroll from './components/smoothScroll'
 import Show from './animations/animations'
+import Canvas from './components/Canvas/index'
 
 import { split } from './utils/text'
 
@@ -23,6 +24,7 @@ class App {
 
     init() {
         new SmoothScroll(this.element, this.elements)
+        new Canvas()
     }
 
     show() {
