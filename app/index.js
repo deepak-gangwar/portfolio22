@@ -1,3 +1,4 @@
+import SmoothScroll from './components/smoothScroll'
 import Show from './animations/animations'
 
 import { split } from './utils/text'
@@ -14,9 +15,14 @@ class App {
         this.elements.heroDescriptionSpans = split({
             element: this.elements.heroDescription,
             expression: '<br>'
-          })
-      
+        })
+        
+        this.init()
         this.show()
+    }
+
+    init() {
+        new SmoothScroll(this.element, this.elements)
     }
 
     show() {
