@@ -3,7 +3,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
-    "dev": "webpack serve --config ./bundler/webpack.dev.js"
+    "dev": "webpack serve --config ./bundler/webpack.dev.js",
+    "deploy": "cross-env git subtree push --prefix public origin gh-pages"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
