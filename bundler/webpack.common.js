@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev'
 
@@ -62,6 +63,8 @@ module.exports = {
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
+
+        new HTMLInlineCSSWebpackPlugin()
     ],
 
     module: 
