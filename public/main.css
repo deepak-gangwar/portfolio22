@@ -1,0 +1,351 @@
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./styles/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.datgui-ac {
+  z-index: 99999 !important;
+}
+
+@font-face {
+  font-family: "Saol Display";
+  src: url(fonts/saol_display-regular.woff2) format("woff2"), url(fonts/saol_display-regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Suisse Intl";
+  src: url(fonts/suisse_intl-regular.woff2) format("woff2"), url(fonts/suisse_intl-regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background-color: #f6f4f1;
+  color: #1d1d1d;
+  font-family: "Suisse Intl";
+}
+
+/*
+** For fixing wierd spacing at top and bottom of saol
+*/
+.hero__word {
+  font-family: "Saol Display";
+  font-size: 5.8rem;
+  letter-spacing: -0.032em;
+  text-transform: uppercase;
+}
+.hero__word::before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  margin-top: calc((1 - 1.9) * 0.5em);
+}
+.hero__word::after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  margin-bottom: calc((1 - 1.9) * 0.36em);
+}
+
+.project__title {
+  font-family: "Saol Display";
+  font-size: 4rem;
+  letter-spacing: -0.055em;
+}
+
+.footer__col-heading {
+  font-family: "Suisse Intl";
+  font-size: 0.58rem;
+  letter-spacing: -0.012em;
+}
+
+.hero__description {
+  font-family: "Suisse Intl";
+  font-size: 0.9rem;
+  letter-spacing: -0.048em;
+  line-height: 14pt;
+}
+
+.header__wrapper {
+  position: relative;
+  width: 100%;
+  top: 0;
+  padding-left: 8.3333333333vw;
+  padding-right: 8.3333333333vw;
+  z-index: 9999999;
+}
+
+.header__content {
+  position: relative;
+}
+
+.header__list {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 5vh 0;
+  list-style: none;
+}
+
+.header__item {
+  display: inline-block;
+}
+
+.header__item:last-child {
+  cursor: pointer;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+.hero__title {
+  position: relative;
+}
+
+.hero__line {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.hero__line__wrapper {
+  overflow: hidden;
+  transform: translate3d(0, 150%, 0) skewY(4deg);
+  perspective: 1000px;
+}
+
+.hero__word {
+  position: relative;
+  display: inline-block;
+}
+
+/*
+* Word Spacing
+*/
+.hero__word:nth-child(2) {
+  margin-left: 15px;
+}
+
+/*
+* Shifting line 3 to right as per design
+*/
+.hero__line:nth-child(3) {
+  margin-left: 24px;
+}
+
+.hero__description {
+  margin-top: 100px;
+}
+.hero__description span {
+  display: inline-block;
+  overflow: hidden;
+  margin-bottom: -5px;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.project {
+  padding: 140px 0 300px;
+  position: relative;
+}
+
+.project__heading {
+  width: 100%;
+  text-align: center;
+  font-family: "Saol Display";
+  font-size: 1.4rem;
+}
+
+ul.project__list {
+  padding: 35px 0 0;
+  width: 34%;
+  margin-left: 44%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+li.project__item {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 0.1px solid rgba(29, 29, 29, 0.5);
+  padding-bottom: 18px;
+}
+
+.project__number {
+  display: inline-block;
+  color: #e77050;
+  font-family: "Saol Display";
+  font-size: 40px;
+  margin-right: 16px;
+}
+
+.project__title {
+  display: inline-block;
+}
+
+.project__img {
+  display: none;
+}
+
+a.project__link {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer__wrapper {
+  margin-left: 8.3333333vw;
+  margin-right: 8.3333333vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 66vh;
+  border-top: 1px solid rgba(29, 29, 29, 0.5);
+}
+
+.footer__content {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10%;
+}
+
+.footer__col {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer__col:nth-child(2) {
+  text-align: center;
+}
+
+.footer__col:nth-child(3) {
+  text-align: right;
+}
+
+.footer__col-heading {
+  margin-bottom: 60px;
+}
+
+.footer__media {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #1d1d1d;
+}
+
+.top {
+  width: 6em;
+  height: 6em;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(40%, -30%);
+}
