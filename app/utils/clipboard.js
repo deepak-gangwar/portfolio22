@@ -16,6 +16,14 @@ export default class Clipboard {
     handleClick() {
         this.contactBtn.addEventListener('click', () => {
             this.copyToClipboardAsync(this.email)
+                        
+            const btn = this.contactBtn
+            btn.innerHTML = "EMAIL COPIED!"
+            
+            setTimeout(() => {
+                this.contactBtn.innerHTML = "CONTACT ME"
+            }, 1500)
+
             console.log("Email address copied to clipboard");
         })
     }
