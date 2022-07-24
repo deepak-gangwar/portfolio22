@@ -1,9 +1,10 @@
 .header__wrapper {
-    position: absolute;
+    position: relative;
     width: 100%;
     top: 0;
     padding-left:8.3333333333vw;
     padding-right: 8.3333333333vw;
+    z-index: 9999999;
 }
 
 .header__content {
@@ -21,4 +22,8 @@
 
 .header__item {
     display: inline-block;    
+}
+
+.header__item:last-child {
+    cursor: pointer;
 }
