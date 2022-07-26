@@ -101,9 +101,20 @@ select {
   }
 }
 body {
-  background-color: #f6f4f1;
-  color: #1d1d1d;
+  background-color: #bbbbbb;
+  color: #29282e;
   font-family: "Suisse Intl";
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 /*
@@ -175,8 +186,42 @@ body {
   display: inline-block;
 }
 
-.header__item:last-child {
+.cta__wrapper {
+  width: auto;
+  border: none;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: all;
   cursor: pointer;
+  text-transform: uppercase;
+}
+
+.contact__wrapper {
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.inner__contact__wrapper {
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.contact {
+  display: block;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: scaleY(1) scaleX(1);
+}
+
+.contact:first-child {
+  padding: 0;
+}
+
+.contact:nth-child(2) {
+  position: absolute;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .hero {
@@ -227,9 +272,12 @@ body {
   margin-top: 100px;
 }
 .hero__description span {
+  opacity: 0;
+  visibility: hidden;
   display: inline-block;
   overflow: hidden;
   margin-bottom: -5px;
+  transform: translateY(200%);
 }
 
 canvas {
@@ -265,7 +313,7 @@ ul.project__list {
 li.project__item {
   display: inline-block;
   width: 100%;
-  border-bottom: 0.1px solid rgba(29, 29, 29, 0.5);
+  border-bottom: 0.1px solid rgba(41, 40, 46, 0.5);
   padding-bottom: 18px;
 }
 
@@ -298,7 +346,7 @@ a.project__link {
   display: flex;
   justify-content: center;
   height: 66vh;
-  border-top: 1px solid rgba(29, 29, 29, 0.5);
+  border-top: 1px solid rgba(41, 40, 46, 0.5);
 }
 
 .footer__content {
@@ -333,7 +381,7 @@ a.project__link {
 
 .footer__link {
   text-decoration: none;
-  color: #1d1d1d;
+  color: #29282e;
 }
 
 .top {

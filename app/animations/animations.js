@@ -11,8 +11,8 @@ export default class Show {
         this.init()
     }
 
-    animateHeroTitle (el) {
-        this.tl.to(el, {
+    animationTimeline(heroLines, heroDescriptionSpans) {
+        this.tl.to(heroLines, {
             duration: 1.2, 
             delay: 0.6, 
             ease: 'power3.out', 
@@ -20,21 +20,21 @@ export default class Show {
             transform: 'translate3d(0, 0, 0) skewY(0)', 
             transformOrigin: 'top left', 
         })
-    }
 
-    animateHeroDescription (el) {
-        this.tl.from(el, {
-            autoAlpha: 0,
-            y: '200%',
+        this.tl.to(heroDescriptionSpans, {
+            autoAlpha: 1,
+            y: '0',
             duration: 1,
             stagger: 0.1,
             ease: 'power3.out',
         }, '-=0.8')
     }
 
-    init () {
-        this.animateHeroTitle(this.items.heroTitle)
-        this.animateHeroDescription(this.items.heroDescriptionSpans)
+    init() {
+        this.animationTimeline(
+            this.items.heroTitle,
+            this.items.heroDescriptionSpans
+        )
     }
       
 }

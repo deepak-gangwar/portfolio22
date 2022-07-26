@@ -52,9 +52,12 @@
 .hero__description {
     @extend %text-24;
     span {
+        opacity: 0;
+        visibility: hidden;
         display: inline-block;
         overflow: hidden;
         margin-bottom: -5px;
+        transform: translateY(200%);
     }
     margin-top: 100px;
 }
