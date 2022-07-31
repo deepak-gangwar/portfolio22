@@ -21,11 +21,11 @@ module.exports = {
     ],
 
     resolve: {
-        modules:  [
-            dirApp, 
+        modules: [
+            dirApp,
             dirAssets,
-            dirShared, 
-            dirStyles, 
+            dirShared,
+            dirStyles,
             dirNode
         ]
     },
@@ -48,7 +48,8 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '../index.pug'),
-            minify: true
+            minify: true,
+            inject: false
         }),
 
         new CopyWebpackPlugin({
@@ -59,7 +60,7 @@ module.exports = {
                 }
             ]
         }),
-         
+
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css',
@@ -68,98 +69,98 @@ module.exports = {
         new HTMLInlineCSSWebpackPlugin()
     ],
 
-    module: 
+    module:
     {
-        rules: 
-        [
+        rules:
+            [
 
-            // HTML
-            {
-                test: /\.(html)$/,
-                use:
-                [
-                    'html-loader'
-                ]
-            },
-
-            // PUG
-            {
-                test: /\.pug$/,
-                use: 
-                [
-                    'pug-loader'
-                ]
-            },
-
-            // JS
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use:
-                [
-                    'babel-loader'
-                ]
-            },
-
-            // CSS
-            {
-                test: /\.scss/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: ''
-                        }
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: false
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: false
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: false
-                        }
-                    }
-                ]
-            },
-
-            // Images
-            {
-                test: /\.(.jpe?g|png|gif|svg|fnt|webp)$/,
-                type: 'asset/resource',
-                generator:
-                {   
-                    filename: 'images/[name][ext]'
-                }
-            },
-
-            // Fonts
-            {
-                test: /\.(woff(2)?|ttf|eot)$/,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'fonts/[name][ext]',
+                // HTML
+                {
+                    test: /\.(html)$/,
+                    use:
+                        [
+                            'html-loader'
+                        ]
                 },
-            },
 
-            // Shaders
-            {
-                test: /\.(glsl|vs|fs|vert|frag)$/,
-                exclude: /node_modules/,
-                use: [
-                    'raw-loader',
-                    'glslify-loader'
-                ]
-            }
-        ]
+                // PUG
+                {
+                    test: /\.pug$/,
+                    use:
+                        [
+                            'pug-loader'
+                        ]
+                },
+
+                // JS
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use:
+                        [
+                            'babel-loader'
+                        ]
+                },
+
+                // CSS
+                {
+                    test: /\.scss/,
+                    use: [
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                            options: {
+                                publicPath: ''
+                            }
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: false
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: false
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: false
+                            }
+                        }
+                    ]
+                },
+
+                // Images
+                {
+                    test: /\.(.jpe?g|png|gif|svg|fnt|webp)$/,
+                    type: 'asset/resource',
+                    generator:
+                    {
+                        filename: 'images/[name][ext]'
+                    }
+                },
+
+                // Fonts
+                {
+                    test: /\.(woff(2)?|ttf|eot)$/,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'fonts/[name][ext]',
+                    },
+                },
+
+                // Shaders
+                {
+                    test: /\.(glsl|vs|fs|vert|frag)$/,
+                    exclude: /node_modules/,
+                    use: [
+                        'raw-loader',
+                        'glslify-loader'
+                    ]
+                }
+            ]
     }
 }
