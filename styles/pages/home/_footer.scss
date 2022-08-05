@@ -12,7 +12,6 @@
     width: 85%;
     display: flex;
     justify-content: space-between;
-    // margin-top: 90px;
     margin-top: 10%;
 }
 
@@ -20,10 +19,13 @@
     .footer__wrapper {
         height: 65vh;
         padding: 10vh 0;
+        margin: 0;
+        justify-content: flex-start;
     }
 
     .footer__content {
         flex-direction: column;
+    //   justify-content: space-evenly;
     }
 }
 
@@ -57,6 +59,7 @@
 
 @media only screen and (max-width: 480px) {
     .footer__col-heading {
+        font-size: 0.58rem;
         margin-bottom: 20px;
     }
 }
@@ -76,8 +79,7 @@ span {
 }
 
 .footer__link {
-    text-decoration: none;
-    color: $color-accent;
+
 }
 
 .top {

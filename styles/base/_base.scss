@@ -10,6 +10,17 @@ body {
     user-select: none;
 }
 
+@media only screen and (max-width: 480px) {
+  body, .app__wrapper {
+    margin: 0 12.5vw;
+  }
+} 
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 // body::-webkit-scrollbar {
 //   width: 0.8em;
 // }
