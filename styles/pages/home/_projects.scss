@@ -8,51 +8,87 @@ canvas {
 }
 
 .project {
-    padding: 140px 0 300px;
+    font-family: $saol;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    margin-bottom: 36vh;
     position: relative;
 }
 
 .project__heading {
     width: 100%;
     text-align: center;
-    font-family: $saol;
-    font-size: 1.4rem;
+    font-size: 2vw;
+    padding: 35px 0;
 }
 
-ul.project__list {
-    padding: 35px 0 0;
-    width: 34%;
-    margin-left: 44%;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
+@media only screen and (max-width: 480px) {
+    .project__heading {
+        font-size: 1rem;
+        text-align: left;
+    }
 }
 
-li.project__item {
-    display: inline-block;
-    width: 100%;
+.project__list {
+    padding: 0;
+    position: relative;
+    left: 44%;
+    width: fit-content;
+    // padding: 35px 0 0;
+}
+
+@media only screen and (max-width: 480px) {
+    .project__list {
+        left: 0;
+    }
+}
+
+.project__item {
     border-bottom: 0.1px solid rgba($color-accent, 0.5);
     padding-bottom: 18px;
 }
 
-.project__content {
+@media only screen and (max-width: 480px) {
+    .project__item {
+        padding: 12px 0 18px;
+    }
+}
 
+.project__content {
+    display: flex;
+    align-items: flex-end;
 }
 
 .project__number  {
-    display: inline-block;
     color: $color-orange;
-    font-family: $saol;
     font-size: 40px;
     margin-right: 16px;
 }
 
-.project__title {
-    @extend %heading-96;
-    display: inline-block;
+@media only screen and (max-width: 480px) {
+    // this is to be used as a clamp min
+    .project__number {
+        font-size: 1.7rem;
+    }
 }
 
-.project__img    {
+.project__title {
+    // @extend %heading-96;
+    //value to be clamped
+    // font-size: 2.5rem;
+    font-size: 5vw;
+    letter-spacing: -4px;
+    margin-bottom: -0.33rem;
+}
+
+@media only screen and (max-width: 480px) {
+    .project__title {
+        font-size: 2.5rem;
+        letter-spacing: -1.6px;
+    }
+}
+
+.project__img {
     // position: absolute;
     // transform: translate(-120%, -60%);
     // width: 320px;
@@ -68,8 +104,6 @@ picture.lazy {
 
 }
 
-a.project__link {
+.project__link {
     cursor: pointer;
-    text-decoration: none;
-    color: inherit;
 }
