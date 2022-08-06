@@ -259,6 +259,7 @@ pre {
 
 @media only screen and (max-width: 600px) {
   .hero {
+    height: auto;
     text-align: left;
   }
 }
@@ -274,9 +275,18 @@ pre {
   margin-bottom: 8px;
 }
 
+@media only screen and (max-width: 600px) {
+  .hero__line {
+    margin-bottom: 0;
+  }
+
+  .hero__line:nth-child(2) {
+    text-align: right;
+  }
+}
 .hero__line__wrapper {
   overflow: hidden;
-  transform: translate3d(0, 150%, 0) skewY(4deg);
+  transform: translate3d(0, 0, 0) skewY(0);
   perspective: 1000px;
 }
 
@@ -285,6 +295,12 @@ pre {
   display: inline-block;
 }
 
+@media only screen and (max-width: 600px) {
+  .hero__word {
+    font-size: 3rem;
+    line-height: 5.6rem;
+  }
+}
 /*
 * Word Spacing
 */
@@ -292,6 +308,11 @@ pre {
   margin-left: 15px;
 }
 
+@media only screen and (max-width: 600px) {
+  .hero__word:nth-child(2) {
+    margin-left: 0;
+  }
+}
 /*
 * Shifting line 3 to right as per design
 */
@@ -299,6 +320,24 @@ pre {
   margin-left: 24px;
 }
 
+@media only screen and (max-width: 600px) {
+  .hero__line:nth-child(3) {
+    margin-left: 0;
+  }
+
+  #hero-2022 {
+    transform: translateX(100%);
+  }
+
+  .line__svg {
+    position: absolute;
+    top: 75%;
+    width: 60px;
+    height: 2px;
+    background-color: #e77050;
+    margin-left: 20px;
+  }
+}
 .hero__description {
   margin-top: 100px;
 }
@@ -314,7 +353,7 @@ pre {
 @media only screen and (max-width: 600px) {
   .hero__description {
     line-height: initial;
-    margin-bottom: 40vh;
+    margin-bottom: 15vh;
   }
 }
 canvas {

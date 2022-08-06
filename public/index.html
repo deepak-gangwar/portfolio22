@@ -259,6 +259,7 @@ pre {
 
 @media only screen and (max-width: 600px) {
   .hero {
+    height: auto;
     text-align: left;
   }
 }
@@ -274,9 +275,18 @@ pre {
   margin-bottom: 8px;
 }
 
+@media only screen and (max-width: 600px) {
+  .hero__line {
+    margin-bottom: 0;
+  }
+
+  .hero__line:nth-child(2) {
+    text-align: right;
+  }
+}
 .hero__line__wrapper {
   overflow: hidden;
-  transform: translate3d(0, 150%, 0) skewY(4deg);
+  transform: translate3d(0, 0, 0) skewY(0);
   perspective: 1000px;
 }
 
@@ -285,6 +295,12 @@ pre {
   display: inline-block;
 }
 
+@media only screen and (max-width: 600px) {
+  .hero__word {
+    font-size: 3rem;
+    line-height: 5.6rem;
+  }
+}
 /*
 * Word Spacing
 */
@@ -292,6 +308,11 @@ pre {
   margin-left: 15px;
 }
 
+@media only screen and (max-width: 600px) {
+  .hero__word:nth-child(2) {
+    margin-left: 0;
+  }
+}
 /*
 * Shifting line 3 to right as per design
 */
@@ -299,6 +320,24 @@ pre {
   margin-left: 24px;
 }
 
+@media only screen and (max-width: 600px) {
+  .hero__line:nth-child(3) {
+    margin-left: 0;
+  }
+
+  #hero-2022 {
+    transform: translateX(100%);
+  }
+
+  .line__svg {
+    position: absolute;
+    top: 75%;
+    width: 60px;
+    height: 2px;
+    background-color: #e77050;
+    margin-left: 20px;
+  }
+}
 .hero__description {
   margin-top: 100px;
 }
@@ -314,7 +353,7 @@ pre {
 @media only screen and (max-width: 600px) {
   .hero__description {
     line-height: initial;
-    margin-bottom: 40vh;
+    margin-bottom: 15vh;
   }
 }
 canvas {
@@ -483,6 +522,6 @@ canvas {
   align-items: center;
   transform: translate(40%, -30%);
 }
-</style></head><body><main class="app"><div class="app__wrapper"><header class="header__wrapper"><div class="header__content"><ul class="header__list"><li class="header__item">DEEPAK GANGWAR</li><li class="header__item">TEMPORARY PORTFOLIO</li><li class="header__item"><div class="cta__wrapper"><div class="contact__wrapper"><div class="inner__contact__wrapper"><div class="contact"><p>&nbsp;&nbsp;Contact Me&nbsp;&nbsp;&nbsp;</p></div><div class="contact"><p>Email Copied!</p></div></div></div></div></li></ul></div></header><section class="hero"><div class="hero__title"><div class="hero__line"><div class="hero__line__wrapper"><div class="hero__word">Deepak</div><div class="hero__word">Gangwar</div></div></div><div class="hero__line"><div class="hero__line__wrapper"><div class="hero__word">Frontend</div><div class="hero__word">Developer</div></div></div><div class="hero__line"><div class="line__svg"></div><div class="hero__line__wrapper"><div class="hero__word">Portfolio</div><div class="hero__word">2022</div></div></div></div><div class="hero__description">Frontend Developer working with brands and individuals across the world.<br>Individual with an eye for good design and passionate about motion and delivering<br>immersive experiences for the web. Accepting freelance work since July 2022</div></section><section class="project" id="works"><div class="project__heading"><span>Project </span><span><i>List</i></span></div><ul class="project__list"><a class="project__link" href="" aria-label="Wannabe"><li class="project__item"><div class="project__content"><div class="project__number">1</div><div class="project__title" href="">Wannabe</div><div class="project__img"><figure><img src="1.jpg"><picture class="lazy"></picture></figure></div></div></li></a><a class="project__link" href="" aria-label="Deplace Maison"><li class="project__item"><div class="project__content"><div class="project__number">2</div><div class="project__title" href="">Deplace Maison</div><div class="project__img"><figure><img src="2.png"><picture class="lazy"></picture></figure></div></div></li></a><a class="project__link" href="" aria-label="Cobo"><li class="project__item"><div class="project__content"><div class="project__number">3</div><div class="project__title" href="">Cobo</div><div class="project__img"><figure><img src="3.jpg"><picture class="lazy"></picture></figure></div></div></li></a><a class="project__link" href="" aria-label="FFF Festival"><li class="project__item"><div class="project__content"><div class="project__number">4</div><div class="project__title" href="">MP Penthouse</div><div class="project__img"><figure><img src="4.png"><picture class="lazy"></picture></figure></div></div></li></a></ul></section><footer class="footer__wrapper"><div class="footer__content"><div class="footer__col"><div class="footer__col-heading">SOCIALS</div><ul class="footer__media"><li class="footer__item"><a class="footer__link" href="https://twitter.com/_DeepakGangwar" target="_blank" aria-label="Deepak Gangwar Twitter's account - new window"><span>Twitter</span></a></li><li class="footer__item"><a class="footer__link" href="https://instagram.com" target="_blank" aria-label="Deepak Gangwar Instagram's account - new window"><span>Instagram</span></a></li><li class="footer__item"><a class="footer__link" href="https://www.linkedin.com/in/deepak-gangwar" target="_blank" aria-label="Deepak Gangwar LinkedIn's account - new window"><span>LinkedIn</span></a></li></ul></div><div class="footer__col"><div class="footer__col-heading">&copy; 2022 All Rights Reserved</div><div class="footer__description"><pre>Deepak Gangwar
+</style></head><body><main class="app"><div class="app__wrapper"><header class="header__wrapper"><div class="header__content"><ul class="header__list"><li class="header__item">DEEPAK GANGWAR</li><li class="header__item">TEMPORARY PORTFOLIO</li><li class="header__item"><div class="cta__wrapper"><div class="contact__wrapper"><div class="inner__contact__wrapper"><div class="contact"><p>&nbsp;&nbsp;Contact Me&nbsp;&nbsp;&nbsp;</p></div><div class="contact"><p>Email Copied!</p></div></div></div></div></li></ul></div></header><section class="hero"><div class="hero__title"><div class="hero__line"><div class="hero__line__wrapper"><div class="hero__word">Deepak</div><div class="hero__word">Gangwar</div></div></div><div class="hero__line"><div class="hero__line__wrapper"><div class="hero__word">Frontend</div><div class="hero__word">Developer</div></div></div><div class="hero__line"><div class="line__svg"></div><div class="hero__line__wrapper"><div class="hero__word">Portfolio</div><div class="hero__word" id="hero-2022">2022</div></div></div></div><div class="hero__description">Frontend Developer working with brands and individuals across the world.<br>Individual with an eye for good design and passionate about motion and delivering<br>immersive experiences for the web. Accepting freelance work since July 2022</div></section><section class="project" id="works"><div class="project__heading"><span>Project </span><span><i>List</i></span></div><ul class="project__list"><a class="project__link" href="" aria-label="Wannabe"><li class="project__item"><div class="project__content"><div class="project__number">1</div><div class="project__title" href="">Wannabe</div><div class="project__img"><figure><img src="1.jpg"><picture class="lazy"></picture></figure></div></div></li></a><a class="project__link" href="" aria-label="Deplace Maison"><li class="project__item"><div class="project__content"><div class="project__number">2</div><div class="project__title" href="">Deplace Maison</div><div class="project__img"><figure><img src="2.png"><picture class="lazy"></picture></figure></div></div></li></a><a class="project__link" href="" aria-label="Cobo"><li class="project__item"><div class="project__content"><div class="project__number">3</div><div class="project__title" href="">Cobo</div><div class="project__img"><figure><img src="3.jpg"><picture class="lazy"></picture></figure></div></div></li></a><a class="project__link" href="" aria-label="FFF Festival"><li class="project__item"><div class="project__content"><div class="project__number">4</div><div class="project__title" href="">MP Penthouse</div><div class="project__img"><figure><img src="4.png"><picture class="lazy"></picture></figure></div></div></li></a></ul></section><footer class="footer__wrapper"><div class="footer__content"><div class="footer__col"><div class="footer__col-heading">SOCIALS</div><ul class="footer__media"><li class="footer__item"><a class="footer__link" href="https://twitter.com/_DeepakGangwar" target="_blank" aria-label="Deepak Gangwar Twitter's account - new window"><span>Twitter</span></a></li><li class="footer__item"><a class="footer__link" href="https://instagram.com" target="_blank" aria-label="Deepak Gangwar Instagram's account - new window"><span>Instagram</span></a></li><li class="footer__item"><a class="footer__link" href="https://www.linkedin.com/in/deepak-gangwar" target="_blank" aria-label="Deepak Gangwar LinkedIn's account - new window"><span>LinkedIn</span></a></li></ul></div><div class="footer__col"><div class="footer__col-heading">&copy; 2022 All Rights Reserved</div><div class="footer__description"><pre>Deepak Gangwar
 Frontend Developer
 Portfolio</pre></div></div><div class="footer__col"><div class="footer__col-heading">TOP</div><a class="top" herf="#"><p>&#x2191;</p></a></div></div></footer></div></main><script src="main.js"></script></body></html>

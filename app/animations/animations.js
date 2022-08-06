@@ -12,12 +12,12 @@ export default class Show {
     }
 
     animationTimeline(heroLines, heroDescriptionSpans) {
-        this.tl.to(heroLines, {
+        this.tl.from(heroLines, {
             duration: 1.2, 
             delay: 0.6, 
             ease: 'power3.out', 
             stagger: 0.1,
-            transform: 'translate3d(0, 0, 0) skewY(0)', 
+            transform: 'translate3d(0, 150%, 0) skewY(4deg)', 
             transformOrigin: 'top left', 
         })
 
