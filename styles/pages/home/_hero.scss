@@ -7,6 +7,12 @@
     text-align: center;
 }
 
+@media only screen and (max-width: 600px) {
+    .hero {
+        text-align: left;
+    }
+}
+
 .hero__title {
     position: relative;
 }
@@ -60,4 +66,13 @@
         transform: translateY(200%);
     }
     margin-top: 100px;
+}
+
+// this is bigger breakpoint than 480px so the body margin is not visible in range 480-600
+// and thus the text flushes to both corners on screen
+@media only screen and (max-width: 600px) {
+    .hero__description {
+        line-height: initial;
+        margin-bottom: 40vh;
+    }
 }

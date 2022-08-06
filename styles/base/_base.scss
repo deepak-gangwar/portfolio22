@@ -25,6 +25,16 @@ ul, ol {
     list-style: none;
 }
 
+@media only screen and (max-width: 600px) {
+  br {
+      display: none;
+  }
+}
+
+pre {
+  font-family: $suisse;
+}
+
 // body::-webkit-scrollbar {
 //   width: 0.8em;
 // }

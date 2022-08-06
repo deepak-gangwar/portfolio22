@@ -13,14 +13,20 @@ class App {
           heroLines: document.querySelectorAll('.hero__line__wrapper'),
           heroDescription: document.querySelector('.hero__description')
         }
-
-        this.elements.heroDescriptionSpans = split({
-            element: this.elements.heroDescription,
-            expression: '<br>'
-        })
         
         this.init()
-        this.show()
+
+        // play animation only on larger viewports
+        // this is not perfect solution. Make a resize function
+        // because this fucks up when larger window is resized
+        if(window.innerWidth > 600) {
+            this.elements.heroDescriptionSpans = split({
+                element: this.elements.heroDescription,
+                expression: '<br>'
+            })
+            this.show()
+        }
+        // fix the bug that hero title disappears on window < 600
     }
 
     init() {
