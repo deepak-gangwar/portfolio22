@@ -11,20 +11,19 @@ canvas {
     font-family: $saol;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    margin-bottom: 36vh;
+    padding-bottom: 36vh;
     position: relative;
 }
 
 .project__heading {
     width: 100%;
     text-align: center;
-    font-size: 2vw;
+    font-size: clamp(1rem, 2vw, 2.2rem); 
     padding: 35px 0;
 }
 
 @media only screen and (max-width: 480px) {
     .project__heading {
-        font-size: 1rem;
         text-align: left;
     }
 }
@@ -34,7 +33,6 @@ canvas {
     position: relative;
     left: 44%;
     width: fit-content;
-    // padding: 35px 0 0;
 }
 
 @media only screen and (max-width: 480px) {
@@ -73,26 +71,19 @@ canvas {
 }
 
 .project__title {
-    // @extend %heading-96;
-    //value to be clamped
-    // font-size: 2.5rem;
-    font-size: 5vw;
+    // fluid typography
+    font-size: clamp(2.5rem, 5vw, 5rem); 
     letter-spacing: -4px;
     margin-bottom: -0.33rem;
 }
 
 @media only screen and (max-width: 480px) {
     .project__title {
-        font-size: 2.5rem;
         letter-spacing: -1.6px;
     }
 }
 
 .project__img {
-    // position: absolute;
-    // transform: translate(-120%, -60%);
-    // width: 320px;
-    // height: 195px;
     display: none;
 }
 

@@ -303,8 +303,6 @@ canvas {
   top: 0px;
   left: 0px;
   z-index: -1;
-  width: 100vw;
-  height: 100vh;
   pointer-events: none;
 }
 
@@ -312,20 +310,19 @@ canvas {
   font-family: "Saol Display";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  margin-bottom: 36vh;
+  padding-bottom: 36vh;
   position: relative;
 }
 
 .project__heading {
   width: 100%;
   text-align: center;
-  font-size: 2vw;
+  font-size: clamp(1rem, 2vw, 2.2rem);
   padding: 35px 0;
 }
 
 @media only screen and (max-width: 480px) {
   .project__heading {
-    font-size: 1rem;
     text-align: left;
   }
 }
@@ -368,14 +365,13 @@ canvas {
   }
 }
 .project__title {
-  font-size: 5vw;
+  font-size: clamp(2.5rem, 5vw, 5rem);
   letter-spacing: -4px;
   margin-bottom: -0.33rem;
 }
 
 @media only screen and (max-width: 480px) {
   .project__title {
-    font-size: 2.5rem;
     letter-spacing: -1.6px;
   }
 }
