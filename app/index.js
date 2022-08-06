@@ -29,8 +29,20 @@ class App {
         // fix the bug that hero title disappears on window < 600
     }
 
+    // if it is not a mobile device then you run the code.
+    isMobile() {
+        if(!(/iPhone|iPad|iPod|Android|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
+            return false
+        } else {
+            return true
+        }
+    }
+
     init() {
-        new SmoothScroll(this.element, this.elements)
+        console.log(this.isMobile())
+        if(!this.isMobile()) {
+            new SmoothScroll(this.element, this.elements)
+        }
         new Canvas()
         new Clipboard()
     }
