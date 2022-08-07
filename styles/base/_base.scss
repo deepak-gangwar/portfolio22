@@ -11,10 +11,16 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
-  body, .app__wrapper {
+  .app__wrapper {
     margin: 0 12.5vw;
   }
 } 
+
+@media only screen and (max-width: 600px) {
+  br {
+      display: none;
+  }
+}
 
 a {
   text-decoration: none;
@@ -23,12 +29,6 @@ a {
 
 ul, ol {
     list-style: none;
-}
-
-@media only screen and (max-width: 600px) {
-  br {
-      display: none;
-  }
 }
 
 pre {

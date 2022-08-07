@@ -27,13 +27,6 @@
     @include lhCrop(1.9);
 }
 
-%heading-96 {
-    font-family: $saol;
-    // font-size: 48pt;
-    font-size: 4rem;
-    letter-spacing: calc(-55 / 1000) * 1em;
-}
-
 %text-14 {
     font-family: $suisse;
     // font-size: 7pt;
