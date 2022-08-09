@@ -17,18 +17,3 @@
         margin-bottom: calc((1 - #{$line-height}) * 0.36em);
     }
 }
-
-%text-14 {
-    font-family: $suisse;
-    // font-size: 7pt;
-    font-size: 0.58rem;
-    letter-spacing: calc(-12 / 1000) * 1em;
-}
-
-%text-24 {
-    font-family: $suisse;
-    // font-size: 12pt;
-    font-size: 0.9rem;
-    letter-spacing: calc(-48 / 1000) * 1em;
-    line-height: 14pt;
-}

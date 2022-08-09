@@ -87,7 +87,11 @@
 }
 
 .hero__description {
-    @extend %text-24;
+    font-family: $suisse;
+    font-size: 0.9rem;
+    letter-spacing: calc(-48 / 1000) * 1em;
+    line-height: 14pt;
+    
     span {
         opacity: 0;
         visibility: hidden;
