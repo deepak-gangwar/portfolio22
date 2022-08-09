@@ -7,13 +7,6 @@
     left: 0;
 }
 
-%flex-center {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 @mixin placeholder {
     &.placeholder { @content; }
     &::-webkit-input-placeholder { @content; }

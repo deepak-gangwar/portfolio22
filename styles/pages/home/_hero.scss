@@ -1,10 +1,9 @@
 .hero {
-    @extend %flex-center;
-    width: 100%;
     height: 100vh;
-    // padding-top: 6vh;
-    position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 @media only screen and (max-width: 600px) {
@@ -14,16 +13,10 @@
     }
 }
 
-.hero__title {
-    position: relative;
-}
-
 .hero__line {
-    display: block;
-    position: relative;
-    width: 100%;
     overflow: hidden;
     margin-bottom: 8px;
+    transform: translate3d(0, 0, 0) skewY(0);
 } 
 
 @media only screen and (max-width: 600px) {
@@ -36,22 +29,18 @@
     }
 }
 
-.hero__line__wrapper {
-    overflow: hidden;
-    // transform: translate3d(0, 150%, 0) skewY(4deg);
-    transform: translate3d(0, 0, 0) skewY(0);
-    perspective: 1000px;
-}
-
 .hero__word {
-    @extend %heading-140;
+    @include lhCrop(1.9);
+    font-family: $saol;
+    font-size: clamp(3rem, 7.2vw, 7.6rem);
+    letter-spacing: calc(-32 / 1000) * 1em;
+    text-transform: uppercase;
     position: relative;
     display: inline-block;
 }
 
 @media only screen and (max-width: 600px) {
     .hero__word {
-        font-size: 3rem;
         line-height: 5.6rem;
     }
 }
@@ -76,10 +65,6 @@
     margin-left: 24px;
 }
 
-.hero__line__svg {
-
-}
-
 @media only screen and (max-width: 600px) {
     .hero__line:nth-child(3) {
         margin-left: 0;
@@ -88,7 +73,9 @@
     #hero-2022 {
         transform: translateX(100%);
     }
+}
 
+@media only screen and (max-width: 460px) {
     .line__svg {
         position: absolute;
         top: 75%;
@@ -105,11 +92,8 @@
         opacity: 0;
         visibility: hidden;
         display: inline-block;
-        overflow: hidden;
-        margin-bottom: -5px;
         transform: translateY(200%);
     }
-    margin-top: 100px;
 }
 
 // this is bigger breakpoint than 480px so the body margin is not visible in range 480-600
@@ -117,6 +101,6 @@
 @media only screen and (max-width: 600px) {
     .hero__description {
         line-height: initial;
-        margin-bottom: 15vh;
+        margin: 15vh 0;
     }
 }
