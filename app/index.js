@@ -9,29 +9,28 @@ class App {
     constructor() {
         this.element = document.querySelector('.app')
         this.elements = {
-          wrapper: document.querySelector('.app__wrapper'),
-          heroLines: document.querySelectorAll('.hero__line__wrapper'),
-          heroDescription: document.querySelector('.hero__description')
+            wrapper: document.querySelector('.app__wrapper'),
+            heroLines: document.querySelectorAll('.hero__line__wrapper'),
+            heroDescription: document.querySelector('.hero__description')
         }
-        
+
         this.init()
 
         // play animation only on larger viewports
         // this is not perfect solution. Make a resize function
         // because this fucks up when larger window is resized
-        if(window.innerWidth > 600) {
+        if (window.innerWidth > 600) {
             this.elements.heroDescriptionSpans = split({
                 element: this.elements.heroDescription,
                 expression: '<br>'
             })
             this.show()
         }
-        // fix the bug that hero title disappears on window < 600
     }
 
     // if it is not a mobile device then you run the code.
     isMobile() {
-        if(!(/iPhone|iPad|iPod|Android|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent) )) {
+        if (!(/iPhone|iPad|iPod|Android|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent))) {
             return false
         } else {
             return true
@@ -39,8 +38,7 @@ class App {
     }
 
     init() {
-        console.log(this.isMobile())
-        if(!this.isMobile()) {
+        if (!this.isMobile()) {
             new SmoothScroll(this.element, this.elements)
         }
         new Canvas()
