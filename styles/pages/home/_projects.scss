@@ -1,5 +1,4 @@
 canvas {
-    display: block;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -11,12 +10,11 @@ canvas {
     font-family: $saol;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    padding-bottom: 36vh;
     position: relative;
+    padding-bottom: 36vh;
 }
 
 .project__heading {
-    width: 100%;
     text-align: center;
     font-size: clamp(1rem, 2vw, 2.2rem); 
     padding: 35px 0;
@@ -29,10 +27,10 @@ canvas {
 }
 
 .project__list {
-    padding: 0;
+    width: fit-content;
     position: relative;
     left: 44%;
-    width: fit-content;
+    padding: 0;
 }
 
 @media only screen and (max-width: 480px) {
@@ -43,7 +41,6 @@ canvas {
 
 .project__item {
     border-bottom: 0.1px solid rgba($color-accent, 0.5);
-    padding-bottom: 18px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -52,9 +49,10 @@ canvas {
     }
 }
 
-.project__content {
+.project__link {
     display: flex;
     align-items: flex-end;
+    padding-bottom: 18px;
 }
 
 .project__number  {
@@ -64,14 +62,12 @@ canvas {
 }
 
 @media only screen and (max-width: 480px) {
-    // this is to be used as a clamp min
     .project__number {
         font-size: 1.7rem;
     }
 }
 
 .project__title {
-    // fluid typography
     font-size: clamp(2.5rem, 5vw, 5rem); 
     letter-spacing: -4px;
     margin-bottom: -0.33rem;
@@ -85,16 +81,4 @@ canvas {
 
 .project__img {
     display: none;
-}
-
-figure {
-
-}
-
-picture.lazy {
-
-}
-
-.project__link {
-    cursor: pointer;
 }
