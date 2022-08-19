@@ -13,6 +13,11 @@
     }
 }
 
+.hero__line__wrapper{
+    opacity: 0;
+    visibility: hidden;
+}
+
 .hero__line {
     overflow: hidden;
     margin-bottom: 8px;
@@ -91,7 +96,9 @@
     font-size: 0.9rem;
     letter-spacing: calc(-48 / 1000) * 1em;
     line-height: 14pt;
-    
+    opacity: 0;
+    visibility: hidden;
+
     span {
         opacity: 0;
         visibility: hidden;

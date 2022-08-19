@@ -6,12 +6,14 @@ export default class Show {
 
         this.items = {}
         this.items.heroTitle = elements.heroLines
+        this.items.heroDescription = elements.heroDescription
         this.items.heroDescriptionSpans = elements.heroDescriptionSpans
 
         this.init()
     }
 
-    animationTimeline(heroLines, heroDescriptionSpans) {
+    animationTimeline(heroLines, heroDescription, heroDescriptionSpans) {
+        this.tl.to(heroLines, { autoAlpha: 1 })
         this.tl.from(heroLines, {
             duration: 1.2, 
             delay: 0.6, 
@@ -21,6 +23,7 @@ export default class Show {
             transformOrigin: 'top left', 
         })
 
+        this.tl.to(heroDescription, { autoAlpha: 1, duration: 1 })
         this.tl.to(heroDescriptionSpans, {
             autoAlpha: 1,
             y: '0',
@@ -33,6 +36,7 @@ export default class Show {
     init() {
         this.animationTimeline(
             this.items.heroTitle,
+            this.items.heroDescription,
             this.items.heroDescriptionSpans
         )
     }
