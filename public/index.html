@@ -187,11 +187,12 @@ pre {
     text-align: left;
   }
 }
-.hero__line__wrapper {
-  opacity: 0;
-  visibility: hidden;
+@media only screen and (min-width: 600px) {
+  .hero__line__wrapper {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
-
 .hero__line {
   overflow: hidden;
   margin-bottom: 8px;
@@ -278,8 +279,6 @@ pre {
   font-size: 0.9rem;
   letter-spacing: -0.048em;
   line-height: 14pt;
-  opacity: 0;
-  visibility: hidden;
 }
 .hero__description span {
   opacity: 0;
@@ -288,6 +287,12 @@ pre {
   transform: translateY(200%);
 }
 
+@media only screen and (min-width: 600px) {
+  .hero__description {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 @media only screen and (max-width: 600px) {
   .hero__description {
     line-height: initial;
