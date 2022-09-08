@@ -4,7 +4,8 @@ html(lang="en")
         include ./views/partials/head
         include ./views/partials/noscript
         
-    body 
+    body.is-loading 
+        include ./views/partials/preloader
         // To include all SVGs as an sprite
         //- svg 
         
@@ -12,7 +13,6 @@ html(lang="en")
             .webgl__wrapper 
                 canvas.webgl
             // To implement smooth-scrolling
-            include ./views/partials/preloader
             .app__wrapper
                 include ./views/partials/header
 

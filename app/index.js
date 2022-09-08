@@ -107,6 +107,7 @@ window.addEventListener('load', () => {
     // gsap.to(preloaderNum, {y: "-100%", delay: .5, duration: 1.5, autoAlpha: 0 })
 
     window.setTimeout(() => {
+        document.body.classList.remove('is-loading')
         preloader.style.display = 'none'
         preloaderBg.in()
         document.body.style.overflow = 'visible'
