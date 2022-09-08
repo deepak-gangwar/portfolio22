@@ -15,12 +15,13 @@ export default class Show {
     animationTimeline(heroLines, heroDescription, heroDescriptionSpans) {
         this.tl.to(heroLines, { autoAlpha: 1 })
         this.tl.from(heroLines, {
-            duration: 1.2, 
-            delay: 0.6, 
-            ease: 'power3.out', 
+            duration: 1.2,
+            // delay: 0.6, 
+            delay: 3,
+            ease: 'power3.out',
             stagger: 0.1,
-            transform: 'translate3d(0, 150%, 0) skewY(4deg)', 
-            transformOrigin: 'top left', 
+            transform: 'translate3d(0, 150%, 0) skewY(4deg)',
+            transformOrigin: 'top left',
         })
 
         this.tl.to(heroDescription, { autoAlpha: 1, duration: 1 })
@@ -40,5 +41,5 @@ export default class Show {
             this.items.heroDescriptionSpans
         )
     }
-      
+
 }

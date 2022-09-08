@@ -1,11 +1,12 @@
+import gsap from 'gsap'
+
+import Preloader from './components/preloader'
 import SmoothScroll from './components/smoothScroll'
 import Show from './animations/animations'
 import Canvas from './components/Canvas/index'
 import Clipboard from './utils/clipboard'
 
 import { split } from './utils/text'
-import Preloader from './components/preloader'
-import gsap from 'gsap'
 
 class App {
     constructor() {
@@ -16,6 +17,7 @@ class App {
             heroDescription: document.querySelector('.hero__description')
         }
 
+        this.createPreloader()
         this.init()
         this.styleConsoleForDevs()
         
@@ -46,6 +48,42 @@ class App {
         }
         new Canvas()
         new Clipboard()
+    }
+
+    createPreloader() {
+        this.preloader = new Preloader()
+
+        const preloader = document.querySelector('.preloader')
+		const preloaderText = preloader.querySelector('.preloader__text-inner')
+		const preloaderNum = preloader.querySelector('.preloader__number-inner')
+		// const preloaderBg = new Preloader()
+
+		const tl = new gsap.timeline({ duration: 1.5 })
+
+
+		window.addEventListener('load', () => {
+			
+			// preloader.style.opacity = 0
+			tl.to(preloaderText, {
+				ease: 'power3.in', 
+				transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
+				transformOrigin: 'top left', 
+			}, 1.5)
+			tl.to(preloaderNum, {
+				ease: 'power3.in', 
+				transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
+				transformOrigin: 'top left', 
+			}, 1.2)
+
+			window.setTimeout(() => {
+				document.body.classList.remove('is-loading')
+				preloader.style.display = 'none'
+				// preloaderBg.in()
+				this.preloader.in()
+				document.body.style.overflow = 'visible'
+				// new App()
+			}, 2000)
+		})
     }
 
     show() {
@@ -80,35 +118,35 @@ class App {
     }
 }
 
-// new App()
+new App()
 
-const preloader = document.querySelector('.preloader')
-const preloaderText = preloader.querySelector('.preloader__text-inner')
-const preloaderNum = preloader.querySelector('.preloader__number-inner')
-const preloaderBg = new Preloader()
+// const preloader = document.querySelector('.preloader')
+// const preloaderText = preloader.querySelector('.preloader__text-inner')
+// const preloaderNum = preloader.querySelector('.preloader__number-inner')
+// const preloaderBg = new Preloader()
 
-const tl = new gsap.timeline({ duration: 1.5 })
+// const tl = new gsap.timeline({ duration: 1.5 })
 
 
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
     
-    // preloader.style.opacity = 0
-    tl.to(preloaderText, {
-        ease: 'power3.in', 
-        transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
-        transformOrigin: 'top left', 
-    }, 1.5)
-    tl.to(preloaderNum, {
-        ease: 'power3.in', 
-        transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
-        transformOrigin: 'top left', 
-    }, 1.2)
+//     // preloader.style.opacity = 0
+//     tl.to(preloaderText, {
+//         ease: 'power3.in', 
+//         transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
+//         transformOrigin: 'top left', 
+//     }, 1.5)
+//     tl.to(preloaderNum, {
+//         ease: 'power3.in', 
+//         transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
+//         transformOrigin: 'top left', 
+//     }, 1.2)
 
-    window.setTimeout(() => {
-        document.body.classList.remove('is-loading')
-        preloader.style.display = 'none'
-        preloaderBg.in()
-        document.body.style.overflow = 'visible'
-        new App()
-    }, 2000)
-})
+//     window.setTimeout(() => {
+//         document.body.classList.remove('is-loading')
+//         preloader.style.display = 'none'
+//         preloaderBg.in()
+//         document.body.style.overflow = 'visible'
+//         new App()
+//     }, 2000)
+// })
