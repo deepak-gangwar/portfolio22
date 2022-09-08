@@ -103,8 +103,6 @@ window.addEventListener('load', () => {
         transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
         transformOrigin: 'top left', 
     }, 1.2)
-    // gsap.to(preloaderText, {y: "-100%", delay: 1, duration: 1, autoAlpha: 0 })
-    // gsap.to(preloaderNum, {y: "-100%", delay: .5, duration: 1.5, autoAlpha: 0 })
 
     window.setTimeout(() => {
         document.body.classList.remove('is-loading')

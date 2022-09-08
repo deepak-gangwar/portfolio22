@@ -40,9 +40,8 @@ dd {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul,
+ol {
   list-style: none;
 }
 
@@ -94,7 +93,7 @@ select {
   }
 }
 body {
-  background-color: white;
+  background: white;
   color: #0d0e13;
   font-family: "Suisse Intl";
   -webkit-touch-callout: none;
@@ -122,7 +121,7 @@ canvas {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 2;
+  z-index: 10;
 }
 
 @media only screen and (max-width: 480px) {
@@ -140,10 +139,6 @@ a {
   color: inherit;
 }
 
-ul, ol {
-  list-style: none;
-}
-
 pre {
   font-family: "Suisse Intl";
 }
@@ -152,28 +147,24 @@ pre {
 ** For fixing wierd spacing at top and bottom of saol
 */
 .preloader {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
   color: white;
   text-align: center;
-  z-index: 3;
-  transition: opacity 1.5s linear;
-  line-height: 1.2;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 40;
 }
 
 .preloader__text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   overflow: hidden;
   transform: translate3d(0, 0, 0) skewY(0);
-  font-size: 1.5rem;
-  z-index: 3;
-  margin-bottom: 20px;
+  z-index: inherit;
 }
 
 .preloader__text span,
@@ -185,8 +176,7 @@ pre {
 .preloader__number {
   overflow: hidden;
   transform: translate3d(0, 0, 0) skewY(0);
-  font-size: 1rem;
-  z-index: 3;
+  z-index: inherit;
 }
 
 .header__wrapper {
@@ -322,7 +312,7 @@ pre {
     top: 75%;
     width: 60px;
     height: 2px;
-    background-color: #e77050;
+    background: #e77050;
     margin-left: 20px;
   }
 }
@@ -494,7 +484,7 @@ pre {
 .top {
   width: 6em;
   height: 6em;
-  background-color: #f5f5f5;
+  background: whitesmoke;
   border-radius: 50%;
   display: flex;
   justify-content: center;

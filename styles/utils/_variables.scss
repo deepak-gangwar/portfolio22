@@ -14,19 +14,17 @@ $color-black: #000;
 $color-primary: rgb(255, 255, 255);
 $color-accent: rgb(13, 14, 19);
 $color-orange: rgb(231, 112, 80);
-$color-white: rgb(246, 244, 241);
+$color-offwhite: rgb(245, 245, 245);
 
 $saol: 'Saol Display';
 $suisse: 'Suisse Intl';
 
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
-// $z-indexes: (
-//     'noscript',
-//     'preloader',
-//     'cursor',
-//     'navigation',
-//     'content',
-//     'cases',
-//     'canvas',
-// );
+$z-indexes: (
+    'noscript',
+    'preloader',
+    'navigation',
+    'content',
+    'canvas',
+);

@@ -1,5 +1,5 @@
 body {
-  background-color: $color-primary;
+  background: $color-primary;
   color: $color-accent;
   font-family: $suisse;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -22,7 +22,7 @@ canvas{
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 2;
+  z-index: z('canvas');
 }
 
 @media only screen and (max-width: 480px) {
@@ -42,10 +42,6 @@ a {
   color: inherit;
 }
 
-ul, ol {
-    list-style: none;
-}
-
 pre {
   font-family: $suisse;
 }
@@ -55,11 +51,11 @@ pre {
 // }
  
 // body::-webkit-scrollbar-track {
-//   background-color: $color-primary;
+//   background: $color-primary;
 // }
  
 // body::-webkit-scrollbar-thumb {
-//   background-color: $color-accent;
+//   background: $color-accent;
 //   border-radius: 1em;
 //   border: 2px solid $color-primary;
 // }
