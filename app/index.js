@@ -109,6 +109,7 @@ window.addEventListener('load', () => {
     window.setTimeout(() => {
         preloader.style.display = 'none'
         preloaderBg.in()
+        document.body.style.overflow = 'visible'
         new App()
     }, 2000)
 })
