@@ -9,7 +9,10 @@ html(lang="en")
         //- svg 
         
         main.app
+            .webgl__wrapper 
+                canvas.webgl
             // To implement smooth-scrolling
+            include ./views/partials/preloader
             .app__wrapper
                 include ./views/partials/header
 

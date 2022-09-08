@@ -4,6 +4,8 @@ import Canvas from './components/Canvas/index'
 import Clipboard from './utils/clipboard'
 
 import { split } from './utils/text'
+import Preloader from './components/preloader'
+import gsap from 'gsap'
 
 class App {
     constructor() {
@@ -78,4 +80,35 @@ class App {
     }
 }
 
-new App()
+// new App()
+
+const preloader = document.querySelector('.preloader')
+const preloaderText = preloader.querySelector('.preloader__text-inner')
+const preloaderNum = preloader.querySelector('.preloader__number-inner')
+const preloaderBg = new Preloader()
+
+const tl = new gsap.timeline({ duration: 1.5 })
+
+
+window.addEventListener('load', () => {
+    
+    // preloader.style.opacity = 0
+    tl.to(preloaderText, {
+        ease: 'power3.in', 
+        transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
+        transformOrigin: 'top left', 
+    }, 1.5)
+    tl.to(preloaderNum, {
+        ease: 'power3.in', 
+        transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
+        transformOrigin: 'top left', 
+    }, 1.2)
+    // gsap.to(preloaderText, {y: "-100%", delay: 1, duration: 1, autoAlpha: 0 })
+    // gsap.to(preloaderNum, {y: "-100%", delay: .5, duration: 1.5, autoAlpha: 0 })
+
+    window.setTimeout(() => {
+        preloader.style.display = 'none'
+        preloaderBg.in()
+        new App()
+    }, 2000)
+})

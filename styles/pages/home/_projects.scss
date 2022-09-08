@@ -1,17 +1,17 @@
-canvas {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: -1;
-    pointer-events: none;
-}
-
 .project {
     font-family: $saol;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     position: relative;
     padding-bottom: 36vh;
+}
+
+.project canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .project__heading {
