@@ -1,5 +1,3 @@
-import gsap from 'gsap'
-
 import Preloader from './components/preloader'
 import SmoothScroll from './components/smoothScroll'
 import Show from './animations/animations'
@@ -52,38 +50,6 @@ class App {
 
     createPreloader() {
         this.preloader = new Preloader()
-
-        const preloader = document.querySelector('.preloader')
-		const preloaderText = preloader.querySelector('.preloader__text-inner')
-		const preloaderNum = preloader.querySelector('.preloader__number-inner')
-		// const preloaderBg = new Preloader()
-
-		const tl = new gsap.timeline({ duration: 1.5 })
-
-
-		window.addEventListener('load', () => {
-			
-			// preloader.style.opacity = 0
-			tl.to(preloaderText, {
-				ease: 'power3.in', 
-				transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
-				transformOrigin: 'top left', 
-			}, 1.5)
-			tl.to(preloaderNum, {
-				ease: 'power3.in', 
-				transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
-				transformOrigin: 'top left', 
-			}, 1.2)
-
-			window.setTimeout(() => {
-				document.body.classList.remove('is-loading')
-				preloader.style.display = 'none'
-				// preloaderBg.in()
-				this.preloader.in()
-				document.body.style.overflow = 'visible'
-				// new App()
-			}, 2000)
-		})
     }
 
     show() {
@@ -119,34 +85,3 @@ class App {
 }
 
 new App()
-
-// const preloader = document.querySelector('.preloader')
-// const preloaderText = preloader.querySelector('.preloader__text-inner')
-// const preloaderNum = preloader.querySelector('.preloader__number-inner')
-// const preloaderBg = new Preloader()
-
-// const tl = new gsap.timeline({ duration: 1.5 })
-
-
-// window.addEventListener('load', () => {
-    
-//     // preloader.style.opacity = 0
-//     tl.to(preloaderText, {
-//         ease: 'power3.in', 
-//         transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
-//         transformOrigin: 'top left', 
-//     }, 1.5)
-//     tl.to(preloaderNum, {
-//         ease: 'power3.in', 
-//         transform: 'translate3d(0, 100%, 0) skewY(0deg)', 
-//         transformOrigin: 'top left', 
-//     }, 1.2)
-
-//     window.setTimeout(() => {
-//         document.body.classList.remove('is-loading')
-//         preloader.style.display = 'none'
-//         preloaderBg.in()
-//         document.body.style.overflow = 'visible'
-//         new App()
-//     }, 2000)
-// })

@@ -19,6 +19,12 @@
     z-index: inherit;
 }
 
+.preloader__text-inner, 
+.preloader__number-inner {
+    will-change: transform;
+    transform-origin: 'top left';
+}
+
 .preloader__text span, 
 .preloader__number span {
     position: relative;
