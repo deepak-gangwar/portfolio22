@@ -43,8 +43,8 @@ class App {
     init() {
         if (!this.isMobile()) {
             new SmoothScroll(this.element, this.elements)
+            new Canvas()
         }
-        new Canvas()
         new Clipboard()
     }
 
