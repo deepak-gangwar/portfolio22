@@ -21,6 +21,8 @@
 }
 
 .header__item:last-child {
+    height: 20px;
+    text-align: center;
     position: relative;
     overflow-y: hidden;
     pointer-events: all;
@@ -29,8 +31,4 @@
 
 .contact {
     transition: transform 1s cubic-bezier(0.19,1,0.22,1), opacity .5s cubic-bezier(0.19,1,0.22,1);
-}
-
-.contact:nth-child(2) {
-    position: absolute;
 }
