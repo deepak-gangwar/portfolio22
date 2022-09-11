@@ -105,13 +105,13 @@ export default class Smooth {
   addEventListners() {
     window.addEventListener('resize', this.onResize, { passive: true })
     window.addEventListener('scroll', this.onScroll, { passive: true })
-    this.topBtn.addEventListener('click', this.goToTop, { passive: true })
+    // this.topBtn.addEventListener('click', this.goToTop, { passive: true })
   }
 
   removeEventListeners() {
     window.removeEventListener('resize', this.onResize, { passive: true })
     window.removeEventListener('scroll', this.onScroll, { passive: true })
-    this.topBtn.removeEventListener('click', this.goToTop, { passive: true })
+    // this.topBtn.removeEventListener('click', this.goToTop, { passive: true })
   }
 
   init() { 
