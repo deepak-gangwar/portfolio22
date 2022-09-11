@@ -1,0 +1,519 @@
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./styles/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+.datgui-ac {
+  z-index: 99999 !important;
+}
+
+@font-face {
+  font-family: "Saol Display";
+  src: url(fonts/saol_display-regular.woff2) format("woff2"), url(fonts/saol_display-regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Suisse Intl";
+  src: url(fonts/suisse_intl-regular.woff2) format("woff2"), url(fonts/suisse_intl-regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background: white;
+  color: #0d0e13;
+  font-family: "Suisse Intl";
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+body.is-loading {
+  background: #0d0e13;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 480px) {
+  .app__wrapper {
+    margin: 0 12.5vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  br {
+    display: none;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+pre {
+  font-family: "Suisse Intl";
+}
+
+/*
+** For fixing wierd spacing at top and bottom of saol
+*/
+.preloader {
+  color: white;
+  text-align: center;
+  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 40;
+}
+
+.preloader__text {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0) skewY(0);
+  z-index: inherit;
+}
+
+.preloader__text-inner,
+.preloader__number-inner {
+  will-change: transform;
+  transform-origin: "top left";
+}
+
+.preloader__text span,
+.preloader__number span {
+  position: relative;
+  display: inline-block;
+}
+
+.preloader__number {
+  overflow: hidden;
+  transform: translate3d(0, 0, 0) skewY(0);
+  z-index: inherit;
+}
+
+.header__wrapper {
+  padding: 0 8.3333333333vw;
+}
+
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 5vh 0;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 480px) {
+  .header__list {
+    justify-content: center;
+  }
+
+  .header__item:not(:last-child) {
+    display: none;
+  }
+}
+.header__item:last-child {
+  height: 20px;
+  text-align: center;
+  position: relative;
+  overflow-y: hidden;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.contact {
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hero {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero {
+    height: auto;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .hero__line__wrapper {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.hero__line {
+  overflow: hidden;
+  margin-bottom: 8px;
+  transform: translate3d(0, 0, 0) skewY(0);
+}
+
+@media only screen and (max-width: 600px) {
+  .hero__line {
+    margin-bottom: 0;
+  }
+
+  .hero__line:nth-child(2) {
+    text-align: right;
+  }
+}
+.hero__word {
+  font-family: "Saol Display";
+  font-size: clamp(3rem, 7.2vw, 7.6rem);
+  letter-spacing: -0.032em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+.hero__word::before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  margin-top: calc((1 - 1.9) * 0.5em);
+}
+.hero__word::after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  margin-bottom: calc((1 - 1.9) * 0.36em);
+}
+
+@media only screen and (max-width: 600px) {
+  .hero__word {
+    line-height: 5.6rem;
+  }
+}
+/*
+* Word Spacing
+*/
+.hero__word:nth-child(2) {
+  margin-left: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero__word:nth-child(2) {
+    margin-left: 0;
+  }
+}
+/*
+* Shifting line 3 to right as per design
+*/
+.hero__line:nth-child(3) {
+  margin-left: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero__line:nth-child(3) {
+    margin-left: 0;
+  }
+
+  #hero-2022 {
+    transform: translateX(100%);
+  }
+}
+@media only screen and (max-width: 460px) {
+  .line__svg {
+    position: absolute;
+    top: 75%;
+    width: 60px;
+    height: 2px;
+    background: #e77050;
+    margin-left: 20px;
+  }
+}
+.hero__description {
+  font-family: "Suisse Intl";
+  font-size: 0.9rem;
+  letter-spacing: -0.048em;
+  line-height: 14pt;
+}
+.hero__description span {
+  opacity: 0;
+  visibility: hidden;
+  display: inline-block;
+  transform: translateY(200%);
+}
+
+@media only screen and (min-width: 600px) {
+  .hero__description {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hero__description {
+    line-height: initial;
+    margin: 15vh 0;
+  }
+}
+.project {
+  font-family: "Saol Display";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  padding-bottom: 36vh;
+}
+
+.project canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.project__heading {
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 2.2rem);
+  padding: 35px 0;
+}
+
+@media only screen and (max-width: 480px) {
+  .project__heading {
+    text-align: left;
+  }
+}
+.project__list {
+  width: fit-content;
+  position: relative;
+  left: 44%;
+  padding: 0;
+}
+
+@media only screen and (max-width: 480px) {
+  .project__list {
+    left: 0;
+  }
+}
+.project__item {
+  border-bottom: 0.1px solid rgba(13, 14, 19, 0.5);
+}
+
+@media only screen and (max-width: 480px) {
+  .project__item {
+    padding: 12px 0 5px;
+  }
+}
+.project__link {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 18px;
+}
+
+.project__number {
+  color: #e77050;
+  font-size: 40px;
+  margin-right: 16px;
+}
+
+@media only screen and (max-width: 480px) {
+  .project__number {
+    font-size: 1.7rem;
+  }
+}
+.project__title {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  letter-spacing: -4px;
+  margin-bottom: -0.33rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .project__title {
+    letter-spacing: -1.6px;
+  }
+}
+.project__img {
+  display: none;
+}
+
+.footer {
+  margin: 0 8.3333333vw;
+  display: flex;
+  justify-content: center;
+  height: 66vh;
+  border-top: 1px solid rgba(13, 14, 19, 0.5);
+}
+
+@media only screen and (max-width: 480px) {
+  .footer {
+    height: 65vh;
+    padding: 10vh 0;
+    margin: 0;
+    justify-content: flex-start;
+  }
+}
+.footer__content {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10%;
+}
+
+@media only screen and (max-width: 480px) {
+  .footer__content {
+    flex-direction: column;
+  }
+}
+.footer__col:nth-child(2) {
+  text-align: center;
+}
+
+.footer__col:nth-child(3) {
+  text-align: right;
+}
+
+@media only screen and (max-width: 700px) {
+  .footer__col:nth-child(2) {
+    text-align: left;
+  }
+
+  .footer__col:nth-child(3) {
+    display: none;
+  }
+}
+.footer__col-heading {
+  font-size: 0.58rem;
+  margin-bottom: 60px;
+}
+
+@media only screen and (max-width: 480px) {
+  .footer__col-heading {
+    margin-bottom: 20px;
+  }
+}
+.footer__media {
+  margin: 0;
+  padding: 0;
+}
+
+.top {
+  width: 6em;
+  height: 6em;
+  background: whitesmoke;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -25%;
+  margin-left: 40%;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.top:hover {
+  transform: scale(1.2);
+}
+
+.top-arrow {
+  fill: none;
+  stroke: #1d1d1d;
+  stroke-miterlimit: 10;
+  stroke-width: 2.4px;
+  transform-origin: center;
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.top:hover > .top-arrow {
+  transform: scale(0.6666666667);
+}

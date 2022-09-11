@@ -7,6 +7,7 @@ export default class Smooth {
 
     this.element = element
     this.elements = elements
+    this.topBtn = document.querySelector('.top')
 
     this.scroll = {
       ease: 0.1,
@@ -44,6 +45,11 @@ export default class Smooth {
     this.setHeight()
     this.onScroll()
     this.scroll.rounded = this.scroll.current = this.scroll.target
+  }
+  
+  goToTop() {
+    this.scroll.target = 0
+    window.scroll(0, 0)
   }
 
   onScroll() {
@@ -99,11 +105,13 @@ export default class Smooth {
   addEventListners() {
     window.addEventListener('resize', this.onResize, { passive: true })
     window.addEventListener('scroll', this.onScroll, { passive: true })
+    this.topBtn.addEventListener('click', this.goToTop, { passive: true })
   }
 
   removeEventListeners() {
     window.removeEventListener('resize', this.onResize, { passive: true })
     window.removeEventListener('scroll', this.onScroll, { passive: true })
+    this.topBtn.removeEventListener('click', this.goToTop, { passive: true })
   }
 
   init() { 

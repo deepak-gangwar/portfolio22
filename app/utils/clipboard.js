@@ -5,12 +5,7 @@ export default class Clipboard {
         this.email = "deepakgangwar4265@gmail.com"
         this.headerItems = document.querySelectorAll('.header__item')
         this.contactBtn = this.headerItems[2]
-
         this.texts = document.querySelectorAll('.contact')
-
-        // this.t1 = this.text[0]
-        // this.t2 = this.text[1]
-        // this.t3 = this.text[2]
         
         this.init()
     }
@@ -21,36 +16,27 @@ export default class Clipboard {
 
     copyToClipboardAsync(str) {
         if (navigator && navigator.clipboard && navigator.clipboard.writeText)
-            return navigator.clipboard.writeText(str);
-        return Promise.reject('The Clipboard API is not available.');
-    };
+            return navigator.clipboard.writeText(str)
+        return Promise.reject('The Clipboard API is not available.')
+    }
 
     handleClick() {
         this.copyToClipboardAsync(this.email)
         this.texts.forEach(text => {
             text.style.transform = `translateY(-200%)`
         })
-        // this.t1.style.transform = 'translateY(-200%)'
-        // this.t2.style.transform = 'translateY(-200%)'
-        // this.t3.style.transform = 'translateY(-200%)'
     }
 
     on() {
         this.texts.forEach(text => {
             text.style.transform = `translateY(-100%)`
         })
-        // this.t1.style.transform = 'translateY(-100%)'
-        // this.t2.style.transform = 'translateY(-100%)'
-        // this.t3.style.transform = 'translateY(-100%)'
     }
 
     off() {
         this.texts.forEach(text => {
             text.style.transform = `translateY(0)`
         })
-        // this.t1.style.transform = 'translateY(0)'
-        // this.t2.style.transform = 'translateY(0)'
-        // this.t3.style.transform = 'translateY(0)'
     }
 
     addEventListeners() {

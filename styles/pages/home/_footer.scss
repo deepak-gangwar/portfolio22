@@ -70,5 +70,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translate(40%, -30%);
+    // transform: translate(40%, -30%);
+    margin-top: -25%;
+    margin-left: 40%;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.top:hover {
+    transform: scale(1.2);
+}
+
+.top-arrow {
+    fill: none;
+    stroke: #1d1d1d;
+    stroke-miterlimit: 10;
+    stroke-width: 2.4px;
+    transform-origin: center;
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.top:hover > .top-arrow {
+    transform: scale(0.6666666667);
 }

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.71" height="33.41" viewBox="0 0 17.71 33.41">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #1d1d1d;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>top-arrow</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <polyline class="cls-1" points="0.71 8.41 7.71 1.41 14.71 8.41"/>
+        <path class="cls-1" d="M17.71,32.41H10.52A2.81,2.81,0,0,1,7.71,29.6V2.41"/>
+      </g>
+    </g>
+  </g>
+</svg>
