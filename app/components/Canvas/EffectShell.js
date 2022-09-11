@@ -8,10 +8,7 @@ export default class EffectShell {
         if (!this.container || !this.itemsWrapper) return
 
         this.setup()
-        this.initEffectShell().then(() => {
-            //   console.log('load finished')
-            this.isLoaded = true
-        })
+        this.initEffectShell()
         this.createEventListeners()
     }
 
@@ -49,29 +46,14 @@ export default class EffectShell {
     }
 
     initEffectShell() {
-        let promises = []
-
         this.items = this.itemsElements
+        console.log(this.items)
 
         const textureLoader = new THREE.TextureLoader()
         this.items.forEach((item, index) => {
-            promises.push(
-                this.loadTexture(
-                    textureLoader,
-                    item.img ? item.img.src : null,
-                    index
-                )
-            )
-        })
-
-        return new Promise((resolve, reject) => {
-            // resolve textures promises
-            Promise.all(promises).then(promises => {
-                // all textures are loaded
-                promises.forEach((promise, index) => {
-                    this.items[index].texture = promise.texture
-                })
-                resolve()
+            textureLoader.load(item.src, (texture) => {
+                this.items[index].texture = texture
+                this.isLoaded = true
             })
         })
     }
@@ -162,7 +144,8 @@ export default class EffectShell {
         this.uniforms.uTexture.value = this.currentItem.texture
 
         // compute imaege ratio
-        let imageRatio = this.currentItem.img.naturalWidth / this.currentItem.img.naturalHeight
+        // let imageRatio = this.currentItem.img.naturalWidth / this.currentItem.img.naturalHeight
+        let imageRatio = this.currentItem.texture.image.naturalWidth / this.currentItem.texture.image.naturalHeight
 
         // scale plane to fit image dimensions
         this.scale = new THREE.Vector3(imageRatio, 1, 1)
@@ -194,43 +177,13 @@ export default class EffectShell {
     get itemsElements() {
         // convert NodeList to Array
         const items = [...this.itemsWrapper.querySelectorAll('.project__link')]
-    
-        // create Array of items including element, image and index
+        const src = ['1.png', '2.png', '3.jpg', '4.jpg']
+
+        // create Array of items including element, image src and index
         return items.map((item, index) => ({
             element: item,
-            img: item.querySelector('img') || null,
+            src: src[index],
             index: index
         }))
-    }
-
-    // This is deprecated, use texture loader
-    // that is why we have included the whole code here as a method
-    loadTexture(loader, url, index) {
-        // https://threejs.org/docs/#api/en/loaders/TextureLoader
-        return new Promise((resolve, reject) => {
-            if (!url) {
-                resolve({ texture: null, index })
-                return
-            }
-            // load a resource
-            loader.load(
-                // resource URL
-                url,
-
-                // onLoad callback
-                texture => {
-                    resolve({ texture, index })
-                },
-
-                // onProgress callback currently not supported
-                undefined,
-
-                // onError callback
-                error => {
-                    console.error('An error happened.', error)
-                    reject(error)
-                }
-            )
-        })
     }
 }
