@@ -1,4 +1,12 @@
-import * as THREE from 'three'
+// import * as THREE from 'three'
+// import { WebGLRenderer, Scene, PerspectiveCamera, Vector2, Vector3, TextureLoader } from 'three'
+import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer'
+import { Scene } from 'three/src/scenes/Scene'
+import { PerspectiveCamera } from 'three/src/cameras/PerspectiveCamera'
+import { Vector2 } from 'three/src/math/Vector2'
+import { Vector3 } from 'three/src/math/Vector3'
+import { TextureLoader } from 'three/src/loaders/TextureLoader'
+
 import gsap from 'gsap'
 
 export default class EffectShell {
@@ -16,16 +24,16 @@ export default class EffectShell {
         window.addEventListener('resize', this.onWindowResize.bind(this), false)
 
         // renderer
-        this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+        this.renderer = new WebGLRenderer({ antialias: true, alpha: true })
         this.renderer.setSize(this.viewport.width, this.viewport.height)
         this.renderer.setPixelRatio = window.devicePixelRatio
         this.container.appendChild(this.renderer.domElement)
 
         // scene
-        this.scene = new THREE.Scene()
+        this.scene = new Scene()
 
         // camera
-        this.camera = new THREE.PerspectiveCamera(
+        this.camera = new PerspectiveCamera(
             40,
             this.viewport.aspectRatio,
             0.1,
@@ -34,7 +42,7 @@ export default class EffectShell {
         this.camera.position.set(1.5, 0.8, 5)
 
         // mouse
-        this.mouse = new THREE.Vector2()
+        this.mouse = new Vector2()
 
         // animation loop
         this.renderer.setAnimationLoop(this.render.bind(this))
@@ -47,9 +55,8 @@ export default class EffectShell {
 
     initEffectShell() {
         this.items = this.itemsElements
-        console.log(this.items)
 
-        const textureLoader = new THREE.TextureLoader()
+        const textureLoader = new TextureLoader()
         this.items.forEach((item, index) => {
             textureLoader.load(item.src, (texture) => {
                 this.items[index].texture = texture
@@ -118,7 +125,7 @@ export default class EffectShell {
         let y = this.mouse.y.map(-1, 1, -this.viewSize.height / 2, this.viewSize.height / 2)
 
         // update the plane position
-        this.position = new THREE.Vector3(x, y, 0)
+        this.position = new Vector3(x, y, 0)
         gsap.to(this.plane.position, {
             x: x,
             y: y,
@@ -148,7 +155,7 @@ export default class EffectShell {
         let imageRatio = this.currentItem.texture.image.naturalWidth / this.currentItem.texture.image.naturalHeight
 
         // scale plane to fit image dimensions
-        this.scale = new THREE.Vector3(imageRatio, 1, 1)
+        this.scale = new Vector3(imageRatio, 1, 1)
         this.plane.scale.copy(this.scale)
     }
 

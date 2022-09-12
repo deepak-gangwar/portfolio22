@@ -1,5 +1,13 @@
 import gsap from "gsap"
-import * as THREE from "three"
+// import * as THREE from "three"
+// import { WebGLRenderer, Scene, OrthographicCamera, BufferAttribute, BufferGeometry, RawShaderMaterial, Mesh } from "three"
+import { WebGLRenderer } from 'three/src/renderers/WebGLRenderer'
+import { Scene } from 'three/src/scenes/Scene'
+import { OrthographicCamera } from "three/src/cameras/OrthographicCamera"
+import { BufferGeometry } from "three/src/core/BufferGeometry"
+import { BufferAttribute } from "three/src/core/BufferAttribute"
+import { RawShaderMaterial } from "three/src/materials/RawShaderMaterial"
+import { Mesh } from 'three/src/objects/Mesh'
 
 import vertex from "../shaders/vertex.glsl"
 import fragment from "../shaders/fragment.glsl"
@@ -27,7 +35,7 @@ export default class Transition {
 
     initRenderer() {
         const canvas = document.querySelector(".webgl")
-        this.renderer = new THREE.WebGLRenderer({
+        this.renderer = new WebGLRenderer({
             alpha: true,
             antialias: true,
             canvas: canvas
@@ -38,27 +46,27 @@ export default class Transition {
     }
 
     initScene() {
-        this.scene = new THREE.Scene()
+        this.scene = new Scene()
     }
 
     initCamera() {
-        this.camera = new THREE.OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 100)
+        this.camera = new OrthographicCamera(window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 100)
         this.camera.lookAt(this.scene.position)
         this.camera.position.z = 1
         this.scene.add(this.camera)
     }
 
     initShape() {
-        this.geometry = new THREE.BufferGeometry()
-        // this.geometry = new THREE.PlaneBufferGeometry(1, 1, 10, 10)
+        this.geometry = new BufferGeometry()
+        // this.geometry = new PlaneBufferGeometry(1, 1, 10, 10)
 
         const vertices = new Float32Array([-1, -1, 0, 3, -1, 0, -1, 3, 0])
         const uvs = new Float32Array([0, 0, 2, 0, 0, 2])
 
-        this.geometry.setAttribute('uv', new THREE.BufferAttribute(uvs, 2))
-        this.geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3))
+        this.geometry.setAttribute('uv', new BufferAttribute(uvs, 2))
+        this.geometry.setAttribute('position', new BufferAttribute(vertices, 3))
 
-        this.material = new THREE.RawShaderMaterial({
+        this.material = new RawShaderMaterial({
             vertexShader: vertex,
             fragmentShader: fragment,
             uniforms: {
@@ -68,7 +76,7 @@ export default class Transition {
             }
         })
 
-        this.mesh = new THREE.Mesh(this.geometry, this.material)
+        this.mesh = new Mesh(this.geometry, this.material)
         this.mesh.scale.set(window.innerWidth / 2, window.innerHeight / 2, 1)
         this.mesh.frustumCulled = false
         this.scene.add(this.mesh)
