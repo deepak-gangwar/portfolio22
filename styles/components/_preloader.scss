@@ -36,3 +36,9 @@
     transform: translate3d(0, 0, 0) skewY(0);
     z-index: inherit;
 }
+
+@media only screen and (max-width: 480px) {
+    .preloader__number {
+        display: none;
+    }
+}
