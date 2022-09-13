@@ -57,11 +57,17 @@ export default class EffectShell {
     initEffectShell() {
         this.items = this.itemsElements
 
+        let textureCount = 0
+        const preloaderNum = document.querySelector('.preloader__number-inner').children[0]
+
         const textureLoader = new TextureLoader()
         this.items.forEach((item, index) => {
             textureLoader.load(item.src, (texture) => {
                 this.items[index].texture = texture
                 this.isLoaded = true
+
+                textureCount++
+                preloaderNum.textContent = `${Math.round((textureCount / this.items.length) * 100)}%`
             })
         })
     }
