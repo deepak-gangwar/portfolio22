@@ -8,6 +8,7 @@ import { Vector3 } from 'three/src/math/Vector3'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
 
 import gsap from 'gsap'
+import { check } from '../../utils/check'
 
 export default class EffectShell {
     constructor(container = document.querySelector('#work'), itemsWrapper = null) {
@@ -184,7 +185,8 @@ export default class EffectShell {
     get itemsElements() {
         // convert NodeList to Array
         const items = [...this.itemsWrapper.querySelectorAll('.project__link')]
-        const src = ['1.png', '2.png', '3.jpg', '4.jpg']
+        const src = check.isWebPSupported() ? ['images/webp/1.webp', 'images/webp/2.webp', 'images/webp/3.webp', 'images/webp/4.webp'] : ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.jpg', 'images/jpg/4.jpg']
+        // const src = ['1.png', '2.png', '3.jpg', '4.jpg']
 
         // create Array of items including element, image src and index
         return items.map((item, index) => ({

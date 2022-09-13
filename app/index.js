@@ -5,6 +5,7 @@ import Canvas from './components/Canvas/index'
 import Clipboard from './utils/clipboard'
 
 import { split } from './utils/text'
+import { check } from './utils/check'
 
 class App {
     constructor() {
@@ -31,17 +32,9 @@ class App {
         }
     }
 
-    // if it is not a mobile device then you run the code.
-    isMobile() {
-        if (!(/iPhone|iPad|iPod|Android|webOS|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent))) {
-            return false
-        } else {
-            return true
-        }
-    }
-
     init() {
-        if (!this.isMobile()) {
+        // if it is not a mobile device then you run the code.
+        if (!check.isMobile()) {
             new SmoothScroll(this.element, this.elements)
             new Canvas()
         }
