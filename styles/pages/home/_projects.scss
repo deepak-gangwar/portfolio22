@@ -4,6 +4,13 @@
     text-rendering: optimizeLegibility;
     position: relative;
     padding-bottom: 36vh;
+    margin-top: 15vh;
+}
+
+@media only screen and (max-width: 480px) {
+    .project {
+        margin-top: 0;
+    }
 }
 
 .project canvas {

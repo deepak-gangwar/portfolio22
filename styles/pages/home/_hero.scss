@@ -95,9 +95,10 @@
 
 .hero__description {
     font-family: $suisse;
-    font-size: 0.9rem;
-    letter-spacing: calc(-48 / 1000) * 1em;
-    line-height: 14pt;
+    font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+    // letter-spacing: calc(-48 / 1000) * 1em;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
 
     span {
         opacity: 0;

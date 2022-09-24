@@ -327,9 +327,9 @@ pre {
 }
 .hero__description {
   font-family: "Suisse Intl";
-  font-size: 0.9rem;
-  letter-spacing: -0.048em;
-  line-height: 14pt;
+  font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.5;
 }
 .hero__description span {
   opacity: 0;
@@ -356,8 +356,14 @@ pre {
   text-rendering: optimizeLegibility;
   position: relative;
   padding-bottom: 36vh;
+  margin-top: 15vh;
 }
 
+@media only screen and (max-width: 480px) {
+  .project {
+    margin-top: 0;
+  }
+}
 .project canvas {
   position: absolute;
   top: 0px;
