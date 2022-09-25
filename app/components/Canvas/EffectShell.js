@@ -12,28 +12,36 @@ import { check } from '../../utils/check'
 
 export default class EffectShell {
     constructor(container = document.querySelector('#work'), itemsWrapper = null) {
+        this.bind()
+
         this.container = container
         this.itemsWrapper = itemsWrapper
         if (!this.container || !this.itemsWrapper) return
 
+        // mouse
+        this.mouse = new Vector2()
+
         this.setup()
         this.initEffectShell()
-        this.createEventListeners()
+        this.addEventListeners()
     }
 
-    setup() {
-        window.addEventListener('resize', this.onWindowResize.bind(this), false)
+    bind() {
+        ['render', 'onResize', 'onMouseMove', 'onMouseLeave', 'onPositionUpdate'].forEach(fn => this[fn] = this[fn].bind(this))
+    }
 
-        // renderer
+    createRenderer() {
         this.renderer = new WebGLRenderer({ antialias: true, alpha: true })
         this.renderer.setSize(this.viewport.width, this.viewport.height)
         this.renderer.setPixelRatio = window.devicePixelRatio
         this.container.appendChild(this.renderer.domElement)
+    }
 
-        // scene
+    createScene() {
         this.scene = new Scene()
+    }
 
-        // camera
+    createCamera() {
         this.camera = new PerspectiveCamera(
             40,
             this.viewport.aspectRatio,
@@ -41,12 +49,15 @@ export default class EffectShell {
             100
         )
         this.camera.position.set(1.5, 0.8, 5)
+    }
 
-        // mouse
-        this.mouse = new Vector2()
+    setup() {
+        this.createRenderer()
+        this.createScene()
+        this.createCamera()
 
         // animation loop
-        this.renderer.setAnimationLoop(this.render.bind(this))
+        this.renderer.setAnimationLoop(this.render)
     }
 
     render() {
@@ -72,33 +83,22 @@ export default class EffectShell {
         })
     }
 
-    createEventListeners() {
+    addEventListeners() {
+        window.addEventListener('resize', this.onResize, false)
+
         this.items.forEach((item, index) => {
             item.element.addEventListener('mouseover', this._onMouseOver.bind(this, index), false)
         })
 
-        this.container.addEventListener('mousemove', this._onMouseMove.bind(this), false)
-        this.itemsWrapper.addEventListener('mouseleave', this._onMouseLeave.bind(this), false)
-    }
-
-    _onMouseLeave(event) {
-        this.isMouseOver = false
-        this.onMouseLeave(event)
-    }
-
-    _onMouseMove(event) {
-        // get normalized mouse position on viewport
-        this.mouse.x = (event.clientX / this.viewport.width) * 2 - 1
-        this.mouse.y = -(event.clientY / this.viewport.height) * 2 + 1
-
-        this.onMouseMove(event)
+        this.container.addEventListener('mousemove', this.onMouseMove, false)
+        this.itemsWrapper.addEventListener('mouseleave', this.onMouseLeave, false)
     }
 
     _onMouseOver(index, event) {
         this.onMouseOver(index, event)
     }
 
-    onWindowResize() {
+    onResize() {
         this.camera.aspect = this.viewport.aspectRatio
         this.camera.updateProjectionMatrix()
         this.renderer.setSize(this.viewport.width, this.viewport.height)
@@ -119,6 +119,7 @@ export default class EffectShell {
     }
 
     onMouseLeave(event) {
+        this.isMouseOver = false
         gsap.to(this.uniforms.uAlpha, {
             value: 0,
             ease: 'Power4.easeOut',
@@ -127,6 +128,10 @@ export default class EffectShell {
     }
 
     onMouseMove(event) {
+        // get normalized mouse position on viewport
+        this.mouse.x = (event.clientX / this.viewport.width) * 2 - 1
+        this.mouse.y = -(event.clientY / this.viewport.height) * 2 + 1
+
         // project mouse position to world coordinates
         let x = this.mouse.x.map(-1, 1, -this.viewSize.width / 2, this.viewSize.width / 2)
         let y = this.mouse.y.map(-1, 1, -this.viewSize.height / 2, this.viewSize.height / 2)
@@ -138,7 +143,7 @@ export default class EffectShell {
             y: y,
             duration: 1,
             ease: 'Power4.easeOut',
-            onUpdate: this.onPositionUpdate.bind(this)
+            onUpdate: this.onPositionUpdate
         })
     }
 
@@ -158,7 +163,6 @@ export default class EffectShell {
         this.uniforms.uTexture.value = this.currentItem.texture
 
         // compute imaege ratio
-        // let imageRatio = this.currentItem.img.naturalWidth / this.currentItem.img.naturalHeight
         let imageRatio = this.currentItem.texture.image.naturalWidth / this.currentItem.texture.image.naturalHeight
 
         // scale plane to fit image dimensions
@@ -192,7 +196,6 @@ export default class EffectShell {
         // convert NodeList to Array
         const items = [...this.itemsWrapper.querySelectorAll('.project__link')]
         const src = check.isWebPSupported() ? ['images/webp/1.webp', 'images/webp/2.webp', 'images/webp/3.webp', 'images/webp/4.webp'] : ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.jpg', 'images/jpg/4.jpg']
-        // const src = ['1.png', '2.png', '3.jpg', '4.jpg']
 
         // create Array of items including element, image src and index
         return items.map((item, index) => ({
