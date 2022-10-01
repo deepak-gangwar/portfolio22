@@ -18,7 +18,7 @@ class App {
 
         this.createPreloader()
         this.init()
-        // this.styleConsoleForDevs()
+        this.styleConsoleForDevs()
         
         // play animation only on larger viewports
         // this is not perfect solution. Make a resize function
