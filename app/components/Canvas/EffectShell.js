@@ -195,7 +195,16 @@ export default class EffectShell {
     get itemsElements() {
         // convert NodeList to Array
         const items = [...this.itemsWrapper.querySelectorAll('.project__link')]
-        const src = check.isWebPSupported() ? ['images/webp/1.webp', 'images/webp/2.webp', 'images/webp/3.webp', 'images/webp/4.webp'] : ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.jpg', 'images/jpg/4.jpg']
+        // const src = check.isWebPSupported() ? ['images/webp/1.webp', 'images/webp/2.webp', 'images/webp/3.webp', 'images/webp/4.webp'] : ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.jpg', 'images/jpg/4.jpg']
+
+        let src = []
+        if(check.isAvifSupported) {
+            src = ['images/avif/1.avif', 'images/avif/2.avif', 'images/avif/3.avif', 'images/avif/4.avif']
+        } else if(check.isWebPSupported) {
+            src = ['images/webp/1.webp', 'images/webp/2.webp', 'images/webp/3.webp', 'images/webp/4.webp']
+        } else {
+            src = ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.png', 'images/jpg/4.jpg']
+        }
 
         // create Array of items including element, image src and index
         return items.map((item, index) => ({
