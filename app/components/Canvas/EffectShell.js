@@ -14,6 +14,7 @@ export default class EffectShell {
     constructor(container = document.querySelector('#work'), itemsWrapper = null) {
         this.bind()
 
+        this.main = document.querySelector('main')
         this.container = container
         this.itemsWrapper = itemsWrapper
         if (!this.container || !this.itemsWrapper) return
@@ -34,7 +35,9 @@ export default class EffectShell {
         this.renderer = new WebGLRenderer({ antialias: true, alpha: true })
         this.renderer.setSize(this.viewport.width, this.viewport.height)
         this.renderer.setPixelRatio = window.devicePixelRatio
-        this.container.appendChild(this.renderer.domElement)
+        this.renderer.domElement.classList.add('gl-project-hover')
+        // this.container.appendChild(this.renderer.domElement)
+        this.main.insertAdjacentElement('afterend', this.renderer.domElement)
     }
 
     createScene() {
@@ -48,7 +51,8 @@ export default class EffectShell {
             0.1,
             100
         )
-        this.camera.position.set(1.5, 0.8, 5)
+        let posX = window.innerWidth < 480 ? 0 : 1.5
+        this.camera.position.set(posX, 0, 4.2)
     }
 
     setup() {
@@ -99,6 +103,11 @@ export default class EffectShell {
     }
 
     onResize() {
+        // this bit was added later on
+        // on mobile you dont see this effect, but on small width desktop screens 
+        // the effect will come to center and not get cropped on left side
+        this.camera.position.x = window.innerWidth < 480 ? 0 : 1.5
+
         this.camera.aspect = this.viewport.aspectRatio
         this.camera.updateProjectionMatrix()
         this.renderer.setSize(this.viewport.width, this.viewport.height)
@@ -171,8 +180,12 @@ export default class EffectShell {
     }
 
     get viewport() {
-        let width = this.container.clientWidth
-        let height = this.container.clientHeight
+        // This bit was updated in order to make a full screen canvas
+        // otherwise we were getting a wierd crop at the bottom
+        let width = window.innerWidth
+        let height = window.innerHeight
+        // let width = this.container.clientWidth
+        // let height = this.container.clientHeight
         let aspectRatio = width / height
         return {
             width,
