@@ -1,11 +1,11 @@
 doctype html
 html(lang="en")
     head
-        include ./views/partials/head
-        include ./views/partials/noscript
+        include ../partials/head
+        include ../partials/noscript
         
     body.is-loading 
-        include ./views/partials/preloader
+        include ../partials/preloader
         // To include all SVGs as an sprite
         //- svg 
         
@@ -14,9 +14,10 @@ html(lang="en")
                 canvas.webgl
             // To implement smooth-scrolling
             .app__wrapper
-                include ./views/partials/header
+                include ../partials/header
 
-                include ./views/partials/about
-                include ./views/partials/footer
+                include ./hero
+                include ./project
+                include ../partials/footer
 
         script(defer="" src="main.js") 

@@ -55,7 +55,14 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             filename: 'about.html',
-            template: path.join(__dirname, '../about.pug'),
+            template: path.join(__dirname, '../views/about/about.pug'),
+            minify: true,
+            inject: false
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'mpp.html',
+            template: path.join(__dirname, '../views/mpp/mpp.pug'),
             minify: true,
             inject: false
         }),
