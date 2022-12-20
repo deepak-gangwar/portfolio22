@@ -47,7 +47,15 @@ module.exports = {
         }),
 
         new HtmlWebpackPlugin({
+            filename: 'index.html',
             template: path.join(__dirname, '../index.pug'),
+            minify: true,
+            inject: false
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            template: path.join(__dirname, '../about.pug'),
             minify: true,
             inject: false
         }),

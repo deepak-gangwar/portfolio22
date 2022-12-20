@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        include ./views/partials/head
+        include ./views/partials/noscript
+        
+    body.is-loading 
+        include ./views/partials/preloader
+        // To include all SVGs as an sprite
+        //- svg 
+        
+        main.app
+            .webgl__wrapper 
+                canvas.webgl
+            // To implement smooth-scrolling
+            .app__wrapper
+                include ./views/partials/header
+
+                include ./views/partials/about
+                include ./views/partials/footer
+
+        script(defer="" src="main.js") 
