@@ -85,6 +85,27 @@ module.exports = {
             inject: false
         }),
 
+        new HtmlWebpackPlugin({
+            filename: 'slider.html',
+            template: path.join(__dirname, '../views/slider/slider.pug'),
+            minify: true,
+            inject: false
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'eq-skincare.html',
+            template: path.join(__dirname, '../views/eq-skincare/eq-skincare.pug'),
+            minify: true,
+            inject: false
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'misc.html',
+            template: path.join(__dirname, '../views/misc/misc.pug'),
+            minify: true,
+            inject: false
+        }),
+
         new CopyWebpackPlugin({
             patterns: [
                 {
