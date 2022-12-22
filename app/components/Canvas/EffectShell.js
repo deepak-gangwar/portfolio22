@@ -212,11 +212,11 @@ export default class EffectShell {
 
         let src = []
         if(check.isAvifSupported) {
-            src = ['images/avif/1.avif', 'images/avif/2.png', 'images/avif/3.png', 'images/avif/4.avif', 'images/avif/5.png', 'images/avif/6.avif', 'images/avif/7.avif']
+            src = ['images/avif/1.avif', 'images/avif/2.png', 'images/avif/3.png', 'images/avif/4.png', 'images/avif/5.png', 'images/avif/6.png']
         } else if(check.isWebPSupported) {
-            src = ['images/webp/1.webp', 'images/webp/2.png', 'images/webp/3.png', 'images/webp/4.webp', 'images/avif/5.png', 'images/webp/6.webp', 'images/webp/7.webp']
+            src = ['images/webp/1.webp', 'images/webp/2.png', 'images/webp/3.png', 'images/webp/4.png', 'images/avif/5.png', 'images/webp/6.png']
         } else {
-            src = ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.png', 'images/jpg/4.jpg', 'images/avif/5.png', 'images/jpg/6.jpg', 'images/jpg/7.jpg']
+            src = ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.png', 'images/jpg/4.png', 'images/avif/5.png', 'images/jpg/6.png']
         }
 
         // create Array of items including element, image src and index
