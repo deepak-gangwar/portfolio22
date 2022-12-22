@@ -78,6 +78,13 @@ module.exports = {
             inject: false
         }),
 
+        new HtmlWebpackPlugin({
+            filename: 'lucciano.html',
+            template: path.join(__dirname, '../views/lucciano/lucciano.pug'),
+            minify: true,
+            inject: false
+        }),
+
         new CopyWebpackPlugin({
             patterns: [
                 {
