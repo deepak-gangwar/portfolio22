@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        include ../partials/head
+        include ../partials/noscript
+        
+    body.is-loading 
+        include ../partials/preloader
+        // To include all SVGs as an sprite
+        //- svg 
+        
+        main.app
+            .webgl__wrapper 
+                canvas.webgl
+            // To implement smooth-scrolling
+            .app__wrapper
+                include ../partials/header
+
+                include ./hero
+                include ./project
+                include ../partials/footer
+
+        script(defer="" src="main.js") 

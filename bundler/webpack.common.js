@@ -60,9 +60,20 @@ module.exports = {
             inject: false
         }),
 
+        /**
+         * Project pages
+         */
+
         new HtmlWebpackPlugin({
             filename: 'mpp.html',
             template: path.join(__dirname, '../views/mpp/mpp.pug'),
+            minify: true,
+            inject: false
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'dcs.html',
+            template: path.join(__dirname, '../views/dental-care-seattle/dcs.pug'),
             minify: true,
             inject: false
         }),

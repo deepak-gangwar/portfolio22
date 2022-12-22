@@ -212,11 +212,11 @@ export default class EffectShell {
 
         let src = []
         if(check.isAvifSupported) {
-            src = ['images/avif/1.avif', 'images/avif/2.avif', 'images/avif/3.avif', 'images/avif/4.avif']
+            src = ['images/avif/1.avif', 'images/avif/2.png', 'images/avif/3.avif', 'images/avif/4.avif', 'images/avif/5.avif']
         } else if(check.isWebPSupported) {
-            src = ['images/webp/1.webp', 'images/webp/2.webp', 'images/webp/3.webp', 'images/webp/4.webp']
+            src = ['images/webp/1.webp', 'images/webp/2.png', 'images/webp/3.webp', 'images/webp/4.webp', 'images/webp/5.webp']
         } else {
-            src = ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.png', 'images/jpg/4.jpg']
+            src = ['images/jpg/1.png', 'images/jpg/2.png', 'images/jpg/3.png', 'images/jpg/4.jpg', 'images/jpg/5.jpg']
         }
 
         // create Array of items including element, image src and index
