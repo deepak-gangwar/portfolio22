@@ -99,12 +99,12 @@ module.exports = {
             inject: false
         }),
 
-        // new HtmlWebpackPlugin({
-        //     filename: 'misc.html',
-        //     template: path.join(__dirname, '../views/misc/misc.pug'),
-        //     minify: true,
-        //     inject: false
-        // }),
+        new HtmlWebpackPlugin({
+            filename: 'misc.html',
+            template: path.join(__dirname, '../views/misc/misc.pug'),
+            minify: true,
+            inject: false
+        }),
 
         new CopyWebpackPlugin({
             patterns: [
